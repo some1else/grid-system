@@ -13,7 +13,7 @@ For instance, you set some constants and import the grid system in your applicat
   !width = 960
   !gutter = 20
 
-  @import {grid_system.sass}[http://github.com/Artiqulate/Grid-System/blob/master/grid_system.sass]
+  @import grid_system.sass
 
 Then you simply mix in the definitions where they apply like so:
 
