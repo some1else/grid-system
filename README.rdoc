@@ -1,6 +1,6 @@
 = Grid System
 
-Grid System is a dynamic {SASS framework}[http://sass-lang.com/]. It's meant to give you the usual benefits of using a CSS framework like {Blueprint}[http://www.blueprintcss.org/] or {960 Grid System}[http://960.gs], with the following few exceptions:
+Grid System is a dynamic {SASS framework}[http://sass-lang.com/]. It's meant to give you the usual benefits of using a CSS framework for layout (i.e.: {Blueprint}[http://www.blueprintcss.org/] or {960 Grid System}[http://960.gs]), with the following few, but important exceptions:
 
 * The presentational class names should not be in the HTML, instead they are SASS mixins in semantically titled selectors instead
 * Instead of having countless prefabricated stylesheets, Grid System takes a few defining values, and figures out the rest with calculations
