@@ -9,38 +9,39 @@
 // that it expands to the width of the viewport
 body
   +container
+  
+  // The content spans 2/3 of the layout, that's eight columns altogether
+  #content
+    +grid6
+    +suffix2
+  
+    // You can use constants from the grid_system.sass to enforce harmony
+    .category
+      :padding = !column_half + px
+    .snippet
+      :width = (!width4 - !column_half) + px
+  
+  // Sidebar is 1/4 of the layout wide. That equals to 4 columns
+  #sidebar
+    +grid4
 
-  // The navigation is an exception because it's positioned absolutely
-  // +positioned mixin takes care of this
+  // Some elements can be an exceptions to floating, because they're
+  // fixed or absolute. +positioned mixin takes care of this
   #nav
     +grid8
     +positioned
     :position absolute
     :top 0
     :left 0
+  #login
+    +grid4
+    +positioned
+    :position fixed
+    :top 0
+    :right 0  
   
-  // The content spans 3/4 of the layout (including the suffix)  
-  #content
-    +grid6
-    +suffix2
-    :background #cfd597 url(../images/content.png) repeat-y
-  
-    // You can use constants from the grid system to enforce harmony
-    .category
-      :padding = !column_half + px
-      :padding
-        :top 0
-        :bottom 0
-    .snippet
-      :width = (!width4 - !column_half) + px
-      :text-align justify
-  
-  #sidebar
-    +grid
-  
-      
+  // The floating approach taken in Grid System sometimes needs clearing    
   .contact
     +clearfix
-  
   #foot
     +clear
