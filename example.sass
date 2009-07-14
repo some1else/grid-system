@@ -1,0 +1,46 @@
+!columns = 12
+!width = 960
+!gutter = 20
+
+@import grid_system.sass
+
+// This makes <body> width conform to the !width constant
+// Use something like #container if you wish to style <body> so,
+// that it expands to the width of the viewport
+body
+  +container
+
+  // The navigation is an exception because it's positioned absolutely
+  // +positioned mixin takes care of this
+  #nav
+    +grid8
+    +positioned
+    :position absolute
+    :top 0
+    :left 0
+  
+  // The content spans 3/4 of the layout (including the suffix)  
+  #content
+    +grid6
+    +suffix2
+    :background #cfd597 url(../images/content.png) repeat-y
+  
+    // You can use constants from the grid system to enforce harmony
+    .category
+      :padding = !column_half + px
+      :padding
+        :top 0
+        :bottom 0
+    .snippet
+      :width = (!width4 - !column_half) + px
+      :text-align justify
+  
+  #sidebar
+    +grid
+  
+      
+  .contact
+    +clearfix
+  
+  #foot
+    +clear
