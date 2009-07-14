@@ -5,12 +5,12 @@
 @import grid_system.sass
 
 // This makes <body> width conform to the !width constant
-// Use something like #container if you wish to style <body> so,
+// Use something like #container if you wish to style <body> so
 // that it expands to the width of the viewport
 body
   +container
   
-  // The content spans 2/3 of the layout, that's eight columns altogether
+  // The content spans 2/3 of the layout, that's 8 columns altogether
   #content
     +grid6
     +suffix2
@@ -21,7 +21,7 @@ body
     .snippet
       :width = (!width4 - !column_half) + px
   
-  // Sidebar is 1/4 of the layout wide. That equals to 4 columns
+  // Sidebar is 1/3 of the layout wide. That equals to 4 columns
   #sidebar
     +grid4
 
