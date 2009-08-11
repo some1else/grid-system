@@ -20,15 +20,6 @@
   
 =width(!n)
   :width = (!column * !n) + (!gutter * (!n - 1)) + "px"
-
-// Straightforward centered container
-
-=container
-  :position relative
-  :margin
-    :left auto
-    :right auto
-  :width = !width + px
   
 // Default grid column positioning
 
@@ -47,6 +38,35 @@
   +positioning
   +gutter
   +width(!n)
+
+// Wrapper mixin
+
+=wrapper(!n)
+  +positioning
+  +wrap(!n)
+
+// Prepend and append padding
+
+=prepend(!n)
+  :padding-left = (!n * !column) + (!gutter * (!n - 1)) + "px"
+=append(!n)
+  :padding-right = (!n * !column) + (!gutter * (!n - 1)) + "px"
+
+// Prefix and suffix margins
+
+=prefix(!n)
+  :margin-left = (!n * !column) + (!gutter * (!n - 1)) + (!gutter * 1.5) + "px"
+=suffix(!n)
+  :margin-right = (!n * !column) + (!gutter * (!n - 1)) + (!gutter * 1.5) + "px"
+
+// Straightforward centered container
+
+=container
+  :position relative
+  :margin
+    :left auto
+    :right auto
+  :width = !width + px
 
 // First and last child
 // .. if nested in another element which is several columns wide
