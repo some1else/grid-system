@@ -36,7 +36,6 @@
   :display inline
   :float left
 
-
 =gutter
   :margin
     :left = (!gutter / 2) + "px"
@@ -49,112 +48,12 @@
   +gutter
   +width(!n)
 
-// You can undo inline floating and margins for special cases,
-// like when you want to position an object absolutely
-
-=undo_positioning
-  :display inherit
-  :float   inherit
-  :margin  inherit
-  
-// Grid columns, sizes and positioning
-
-=grid1
-  :width = !width1  + px
-  +grid
-=grid2
-  :width = !width2  + px
-  +grid
-=grid3
-  :width = !width3  + px
-  +grid
-=grid4
-  :width = !width4  + px
-  +grid
-=grid5
-  :width = !width5  + px
-  +grid
-=grid6
-  :width = !width6  + px
-  +grid
-=grid7
-  :width = !width7  + px
-  +grid
-=grid8
-  :width = !width8  + px
-  +grid
-=grid9
-  :width = !width9  + px
-  +grid
-=grid10
-  :width = !width10 + px
-  +grid
-=grid11
-  :width = !width11 + px
-  +grid
-=grid12
-  :width = !width12 + px
-  +grid
-=grid13
-  :width = !width13 + px
-  +grid
-=grid14
-  :width = !width14 + px
-  +grid
-=grid15
-  :width = !width15 + px
-  +grid
-=grid16
-  :width = !width16 + px
-  +grid
-
-// Prefix and suffix margins
-
-=prefix1
-  :margin-left  = !width1 + (!gutter * 1.5) + px
-=suffix1
-  :margin-right = !width1 + (!gutter * 1.5) + px
-=prefix2
-  :margin-left  = !width2 + (!gutter * 1.5) + px
-=suffix2
-  :margin-right = !width2 + (!gutter * 1.5) + px
-=prefix3
-  :margin-left  = !width3 + (!gutter * 1.5) + px
-=suffix3
-  :margin-right = !width3 + (!gutter * 1.5) + px
-=prefix4
-  :margin-left  = !width4 + (!gutter * 1.5) + px
-=suffix4
-  :margin-right = !width4 + (!gutter * 1.5) + px
-=prefix5
-  :margin-left  = !width5 + (!gutter * 1.5) + px
-=suffix5
-  :margin-right = !width5 + (!gutter * 1.5) + px
-=prefix6
-  :margin-left  = !width6 + (!gutter * 1.5) + px
-=suffix6
-  :margin-right = !width6 + (!gutter * 1.5) + px
-=prefix7
-  :margin-left  = !width7 + (!gutter * 1.5) + px
-=suffix7
-  :margin-right = !width7 + (!gutter * 1.5) + px
-=prefix8
-  :margin-left  = !width8 + (!gutter * 1.5) + px
-=suffix8
-  :margin-right = !width8 + (!gutter * 1.5) + px
-
-// Left and right padding
-
-=leftpad1
-  :padding-left = !width1 + px
-=rightpad1
-  :padding-left = !width1 + px
-
-// First and list child in a container
+// First and last child
+// .. if nested in another element which is several columns wide
+// .. if possible, use +wrapper(x) for parent element, doesnt margin
 
 =alpha
   :margin-left 0
-
 =omega
   :margin-right 0
 
@@ -182,3 +81,15 @@
     :height 0
   * html &
     :height 1%
+    
+// You can undo inline floating and margins for special cases,
+// like when you want to position an object absolutely or statically
+
+=undo_positioning
+  :display inherit
+  :float   inherit
+=undo_gutter
+  :margin  inherit
+=undo
+  +undo_positioning
+  +undo_gutter
