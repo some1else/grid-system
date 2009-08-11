@@ -14,36 +14,42 @@ body
   
   // The content spans 2/3 of the layout, that's 8 columns altogether
   #content
-    +grid6
-    +suffix2
+    +column(6)
+    +suffix(2)
   
     // You can use constants from the grid_system.sass to enforce harmony
     .category
-      :padding = (!column/2) + "px"
+      :padding = (!column / 2) + "px"
     .snippet
-      :width = (!width4 - !column_half) + "px"
+      :width = (!width4 - (!column / 2)) + "px"
+      
+  // Some elements can be an exceptions to floating, because they're
+  // fixed or absolute. +undo mixin takes care of this
+  #nav
+   +column(8)
+   +undo_gutter
+   :position absolute
+   :top 0
+   :left 0
+  #login
+   +column(4)
+   +undo_positioning
+   :position fixed
+   :top 0
+   :right 0  
+
+  // The floating approach taken sometimes needs clearing    
+  .contact
+   +clearfix
+  #foot
+   +clear
+  
+  // If you want to use the old syntax, import backwards compatibility file like this
+  @import backwards_compatibility.sass
   
   // Sidebar is 1/3 of the layout wide. That equals to 4 columns
   #sidebar
-    +grid4
-
-  // Some elements can be an exceptions to floating, because they're
-  // fixed or absolute. +positioned mixin takes care of this
-  #nav
-    +column(8)
-    +positioned
-    :position absolute
-    :top 0
-    :left 0
-  #login
-    +column(4)
-    +positioned
-    :position fixed
-    :top 0
-    :right 0  
-  
-  // The floating approach taken in Grid System sometimes needs clearing    
-  .contact
-    +clearfix
-  #foot
-    +clear
+    +grid4 // In new syntax this equals to +column(4)
+  #content
+    .snippet
+      :width = (!width4 - !column_half) + "px" // !column_half = !column / 2
