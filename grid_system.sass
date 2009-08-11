@@ -13,24 +13,13 @@
 
 !column = (!width / !columns) - !gutter
 
-// Width constants implied by column and gutter sizes
+// Width mixin
 
-!width1 =  !column
-!width2 =  (!column * 2)  + !gutter
-!width3 =  (!column * 3)  + (!gutter * 2)
-!width4 =  (!column * 4)  + (!gutter * 3)
-!width5 =  (!column * 5)  + (!gutter * 4)
-!width6 =  (!column * 6)  + (!gutter * 5)
-!width7 =  (!column * 7)  + (!gutter * 6)
-!width8 =  (!column * 8)  + (!gutter * 7)
-!width9 =  (!column * 9)  + (!gutter * 8)
-!width10 = (!column * 10) + (!gutter * 9)
-!width11 = (!column * 11) + (!gutter * 10)
-!width12 = (!column * 12) + (!gutter * 11)
-!width13 = (!column * 13) + (!gutter * 12)
-!width14 = (!column * 14) + (!gutter * 13)
-!width15 = (!column * 15) + (!gutter * 14)
-!width16 = (!column * 16) + (!gutter * 15)
+=wrap(!n)
+  :width = (!column * !n) + (!gutter * !n) + "px"
+  
+=width(!n)
+  :width = (!column * !n) + (!gutter * (!n - 1)) + "px"
 
 // Straightforward centered container
 
@@ -43,17 +32,27 @@
   
 // Default grid column positioning
 
-=grid
+=positioning
   :display inline
   :float left
+
+
+=gutter
   :margin
-    :left = (!gutter / 2) + px
-    :right = (!gutter / 2) + px
+    :left = (!gutter / 2) + "px"
+    :right = (!gutter / 2) + "px"
+
+// Column mixin
+
+=column(!n)
+  +positioning
+  +gutter
+  +width(!n)
 
 // You can undo inline floating and margins for special cases,
 // like when you want to position an object absolutely
 
-=positioned
+=undo_positioning
   :display inherit
   :float   inherit
   :margin  inherit
