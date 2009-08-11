@@ -1,8 +1,8 @@
 // Define these before you import the grid system
 
-// !width = 960   // Width of the container, number in pixels
-// !columns = 12  // Number of columns in the layout
-// !gutter = 20   // Spacing between columns, number in pixels
+!width    ||= 960   // Width of the container, number in pixels
+!columns  ||= 12  // Number of columns in the layout
+!gutter   ||= 20   // Spacing between columns, number in pixels
 
 // Importing default rules
 
@@ -12,7 +12,6 @@
 // From here on in, sizes are calculated arithmetically
 
 !column = (!width / !columns) - !gutter
-!column_half = !column / 2
 
 // Width constants implied by column and gutter sizes
 
@@ -184,14 +183,3 @@
     :height 0
   * html &
     :height 1%
-
-// Decorate any style with mixins like this
-
-.alpa
-  +alpha
-.omega
-  +omega
-.clear
-  +clear
-.clearfix
-  +clearfix
