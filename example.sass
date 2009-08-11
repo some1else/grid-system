@@ -1,3 +1,5 @@
+// Optional specificitaion
+
 !columns = 12
 !width = 960
 !gutter = 20
@@ -17,9 +19,9 @@ body
   
     // You can use constants from the grid_system.sass to enforce harmony
     .category
-      :padding = !column_half + px
+      :padding = (!column/2) + "px"
     .snippet
-      :width = (!width4 - !column_half) + px
+      :width = (!width4 - !column_half) + "px"
   
   // Sidebar is 1/3 of the layout wide. That equals to 4 columns
   #sidebar
@@ -28,13 +30,13 @@ body
   // Some elements can be an exceptions to floating, because they're
   // fixed or absolute. +positioned mixin takes care of this
   #nav
-    +grid8
+    +column(8)
     +positioned
     :position absolute
     :top 0
     :left 0
   #login
-    +grid4
+    +column(4)
     +positioned
     :position fixed
     :top 0
