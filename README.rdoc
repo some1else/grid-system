@@ -19,7 +19,6 @@ Then you simply mix in the definitions where they apply like so:
 
   body
     +container
-
   #content
     +column(6)
     +prefix(2)
@@ -30,13 +29,10 @@ You can also do more complex layouts with wrappers
   
   body
     +container
-  
   #nav
-    +column(4)
-    
+    +column(4)  
   #content
-    +wrapper(8)
-    
+    +wrapper(8)  
     dl
       dt
         +column(2)
