@@ -1,8 +1,11 @@
 // Define these before you import the grid system
 
-!width    ||= 960   // Width of the container, number in pixels
-!columns  ||= 12  // Number of columns in the layout
-!gutter   ||= 20   // Spacing between columns, number in pixels
+// Width of the container, number in pixels
+!width    ||= 960
+// Number of columns in the layout
+!columns  ||= 12
+// Spacing between columns, number in pixels
+!gutter   ||= 20
 
 // Importing default rules
 
@@ -66,15 +69,15 @@
   :margin
     :left auto
     :right auto
-  :width = !width + px
+  :width = !width + "px"
 
 // First and last child
 // .. if nested in another element which is several columns wide
 // .. if possible, use +wrapper(x) for parent element, doesnt margin
 
-=alpha
+=first
   :margin-left 0
-=omega
+=last
   :margin-right 0
 
 // Clearing floats
@@ -110,6 +113,7 @@
   :float   inherit
 =undo_gutter
   :margin  inherit
+
 =undo
   +undo_positioning
   +undo_gutter
