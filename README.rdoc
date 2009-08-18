@@ -39,7 +39,7 @@ You can also do more complex layouts with wrappers
       dd
         +column(6)
 
-For more info, take a look at {example.sass}[http://github.com/Artiqulate/Grid-System/blob/master/example.sass] (Also shows how to get backwards compatibility with the old syntax working)
+For more info, take a look at {The Example}[http://github.com/Artiqulate/Grid-System-Example] (Also shows how to get backwards compatibility with the old syntax working)
 
 == Credits
 
