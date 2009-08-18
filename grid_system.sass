@@ -51,16 +51,16 @@
 // Prepend and append padding
 
 =prepend(!n)
-  :padding-left = (!n * !column) + (!gutter * (!n - 1)) + "px"
+  :padding-left = (!n * !column) + (!gutter * !n) + "px"
 =append(!n)
-  :padding-right = (!n * !column) + (!gutter * (!n - 1)) + "px"
+  :padding-right = (!n * !column) + (!gutter * !n) + "px"
 
 // Prefix and suffix margins
 
 =prefix(!n)
-  :margin-left = (!n * !column) + (!gutter * (!n - 1)) + (!gutter * 1.5) + "px"
+  :margin-left = (!n * !column) + (!gutter * (!n + 0.5)) + "px"
 =suffix(!n)
-  :margin-right = (!n * !column) + (!gutter * (!n - 1)) + (!gutter * 1.5) + "px"
+  :margin-right = (!n * !column) + (!gutter * (!n + 0.5)) + "px"
 
 // Straightforward centered container
 
