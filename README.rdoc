@@ -39,8 +39,6 @@ You can also do more complex layouts with wrappers
       dd
         +column(6)
 
-For more info, take a look at {The Example}[http://github.com/Artiqulate/Grid-System-Example] (Also shows how to get backwards compatibility with the old syntax working)
-
 == Credits
 
 Author:: {Srđan Prodanović}[http://github.com/Some1Else]
@@ -48,6 +46,6 @@ Sources:: {960 Grid System}[http://960.gs], {Eric Meyer CSS Reset}[http://meyerw
 
 == Notice
 
-The SASS Grid System is still just a working prototype. Please fork and contribute. If you have an opinion come hang out in {#haml on FreeNode}[irc://irc.freenode.net/haml] or {send me a GitHub private message}[http://github.com/inbox/new/artiqulate].
+The SASS Grid System is still just a working prototype. Please fork and contribute. If you have an opinion come hang out in {#haml on FreeNode}[irc://irc.freenode.net/haml] or {send me a GitHub private message}[http://github.com/inbox/new/Some1Else].
 
 
