@@ -6,6 +6,8 @@
 !columns  ||= 12
 // Spacing between columns, number in pixels
 !gutter   ||= 20
+// Layout unit
+!unit     ||= "px"
 
 // Importing default rules
 
@@ -19,10 +21,10 @@
 // Width mixin
 
 =wrap(!n)
-  :width = (!column * !n) + (!gutter * !n) + "px"
+  :width = (!column * !n) + (!gutter * !n) + !unit
   
 =width(!n)
-  :width = (!column * !n) + (!gutter * (!n - 1)) + "px"
+  :width = (!column * !n) + (!gutter * (!n - 1)) + !unit
   
 // Default grid column positioning
 
@@ -32,8 +34,8 @@
 
 =gutter
   :margin
-    :left = (!gutter / 2) + "px"
-    :right = (!gutter / 2) + "px"
+    :left = (!gutter / 2) + !unit
+    :right = (!gutter / 2) + !unit
 
 // Column mixin
 
@@ -51,16 +53,16 @@
 // Prepend and append padding
 
 =prepend(!n)
-  :padding-left = (!n * !column) + (!gutter * (!n)) + "px"
+  :padding-left = (!n * !column) + (!gutter * (!n)) + !unit
 =append(!n)
-  :padding-right = (!n * !column) + (!gutter * (!n)) + "px"
+  :padding-right = (!n * !column) + (!gutter * (!n)) + !unit
 
 // Prefix and suffix margins
 
 =prefix(!n)
-  :margin-left = (!n * !column) + (!gutter * (!n - 1)) + (!gutter * 1.5) + "px"
+  :margin-left = (!n * !column) + (!gutter * (!n - 1)) + (!gutter * 1.5) + !unit
 =suffix(!n)
-  :margin-right = (!n * !column) + (!gutter * (!n - 1)) + (!gutter * 1.5) + "px"
+  :margin-right = (!n * !column) + (!gutter * (!n - 1)) + (!gutter * 1.5) + !unit
 
 // Straightforward centered container
 
@@ -69,7 +71,7 @@
   :margin
     :left auto
     :right auto
-  :width = !width + "px"
+  :width = !width + !unit
 
 // First and last child
 // .. if nested in another element which is several columns wide
